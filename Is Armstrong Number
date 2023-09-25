@@ -1,0 +1,37 @@
+import java.util.*;
+public class Main {
+	
+	public static int countDigits(int num){
+		int count =0;
+		while(num>0){
+			count++;
+			num/=10;
+		}
+		return count; 
+	}
+	public static boolean isArmstrong(int num){
+		int sum=0;
+		int digits = countDigits(num);
+		int temp = num;
+		while(num>0){
+			int r = num%10;
+			sum+= Math.pow(r, digits);
+			num = num/10;
+		}
+		if(sum==temp){
+			return true;
+		}else{
+			return false;
+		}
+	}
+    public static void main(String args[]) {
+		Scanner s = new Scanner(System.in);
+		int num1= s.nextInt();
+		boolean result = isArmstrong(num1);
+		if(result){
+			System.out.println("true");
+		}else {
+			System.out.println("false");
+		}
+    }
+}
