@@ -1,0 +1,17 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+		Scanner s = new Scanner(System.in);
+		int csum=0;
+		while(true){
+			int num  = s.nextInt();
+			csum+=num;
+
+			if(csum<0){
+				break;
+			}
+			System.out.println(num);
+		}
+		s.close();
+    }
+}
